@@ -1,22 +1,22 @@
 # Uso de la skill SIU-Guarani Chulupi con otras IA
 
-Este documento explica como usar la skill `siu-guarani-chulupi` con otras IA. La skill esta orientada a personalizaciones de Chulupi en SIU-Guarani 3.x, especialmente Autogestion 3W y Preinscripcion.
+Este documento explica como usar la skill `siu-guarani-chulupi` con otras IA o agentes distintos de Codex de OpenAI. La skill esta orientada a personalizaciones de Chulupi en SIU-Guarani 3.x, especialmente Autogestion 3W y Preinscripcion.
 
-La estructura esta optimizada para Codex, pero `SKILL.md` tambien contiene las reglas nucleares para agentes que solo puedan leer el archivo principal.
+La estructura esta pensada principalmente para Codex de OpenAI, pero `SKILL.md` tambien contiene las reglas nucleares para agentes que solo puedan leer el archivo principal.
 
 Si otra herramienta entiende el formato de skills y puede cargar `SKILL.md`, `references/` y `assets/` por si misma, no hace falta ninguna adaptacion especial. Si solo puede leer `SKILL.md`, la skill sigue siendo usable; las referencias y templates quedan como ampliacion opcional.
 
 Instaladores compatibles, como el CLI de Vercel `skills`, pueden instalar esta skill desde el repositorio y ubicarla en la carpeta esperada por cada agente:
 
 ```bash
-npx skills add <usuario>/<repositorio> --skill siu-guarani-chulupi
+npx skills add wfheredia0/skills-workbench --skill siu-guarani-chulupi
 ```
 
 Si la herramienta no tiene soporte nativo para skills, usar el siguiente prompt de agente para indicarle como decidir que archivos necesita. Si el agente informa que no puede acceder a `references/` o `assets/`, debe trabajar con las instrucciones nucleares incluidas en `SKILL.md`.
 
 ## Como incorporar el prompt
 
-El bloque "Prompt de agente" debe agregarse como instruccion del agente o del asistente que va a trabajar con la skill. Esto permite que la IA orqueste mejor el trabajo: leer `SKILL.md`, decidir que referencias necesita, usar templates cuando corresponda y respetar las reglas de personalizacion.
+El bloque "Prompt de agente" debe agregarse como instruccion del agente o del asistente que va a trabajar con la skill. Esto permite que la IA organice mejor el trabajo: leer `SKILL.md`, decidir que referencias necesita, usar templates cuando corresponda y respetar las reglas de personalizacion.
 
 Si la herramienta permite editar instrucciones del agente, pegar ahi el prompt completo. Si no permite configurarlo, pedirle explicitamente a la IA que incorpore ese texto como instrucciones de trabajo antes de comenzar la tarea.
 
@@ -30,7 +30,7 @@ skills/siu-guarani-chulupi/references/*.md
 skills/siu-guarani-chulupi/assets/templates/*.php
 ```
 
-Ignorar o tratar como metadata especifica de Codex:
+Ignorar o tratar como metadata especifica de Codex de OpenAI:
 
 ```text
 skills/siu-guarani-chulupi/agents/openai.yaml
@@ -95,6 +95,6 @@ Casos de decision:
 
 ## Limitaciones
 
-Otras IA no siempre activan automaticamente la skill `siu-guarani-chulupi` como Codex. Si no pueden acceder al repositorio, hay que proporcionarles el contenido de `SKILL.md` y de las referencias que pidan.
+Otras IA no siempre activan automaticamente la skill `siu-guarani-chulupi` como Codex de OpenAI. Si no pueden acceder al repositorio, hay que proporcionarles el contenido de `SKILL.md` y de las referencias que pidan.
 
 El archivo `SKILL.md` no reemplaza la inspeccion del proyecto real. Chulupi y SIU-Guarani pueden variar por version, instalacion y personalizaciones previas.

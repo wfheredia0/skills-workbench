@@ -4,6 +4,12 @@ Este repositorio reune skills que he creado para usar en mis proyectos personale
 
 Las skills pueden actualizarse con el tiempo para incorporar mejoras, corregir errores, ajustar instrucciones, agregar nuevas referencias o adaptar los flujos de trabajo a cambios en las herramientas y proyectos donde se usan.
 
+## Enfoque principal
+
+Estas skills estan pensadas principalmente para usarse con Codex de OpenAI. Por eso siguen la convencion de `SKILL.md`, `references/`, `assets/` y metadata opcional en `agents/openai.yaml`.
+
+Aunque el foco principal es Codex, el contenido busca mantenerse lo suficientemente claro y portable para poder adaptarse a otros agentes o herramientas compatibles con Agent Skills.
+
 ## Responsabilidad de uso
 
 El uso de estas skills es bajo responsabilidad de quien las aplique. No se recomienda ejecutar cambios directamente sobre entornos de produccion.
@@ -28,9 +34,9 @@ docs/
 
 - `siu-guarani-chulupi`: guia operativa para personalizaciones de Chulupi en SIU-Guarani 3.x, basada en el [manual consolidado de personalizacion de Chulupi](docs/Manual_Personalizacion_Chulupi_Partes_I_y_II_contrastado_documentacion_oficial_3.23.0.md).
 
-## Uso con otras IA
+## Uso con agentes distintos de Codex
 
-Ver [docs/uso-skill-siu-guarani-chulupi-con-otras-ia.md](docs/uso-skill-siu-guarani-chulupi-con-otras-ia.md) para usar la skill `siu-guarani-chulupi` como paquete de instrucciones en ChatGPT, Claude, Gemini, Copilot u otros agentes.
+Ver [docs/uso-skill-siu-guarani-chulupi-con-otras-ia.md](docs/uso-skill-siu-guarani-chulupi-con-otras-ia.md) para adaptar la skill `siu-guarani-chulupi` a agentes o herramientas que no carguen skills igual que Codex de OpenAI.
 
 ## Instalacion con Vercel skills
 
@@ -39,7 +45,7 @@ Este repositorio sigue una estructura compatible con instaladores de Agent Skill
 Cuando el repositorio este publicado en GitHub, la skill podra instalarse con el CLI de Vercel `skills` indicando el repositorio y el nombre de la skill:
 
 ```bash
-npx skills add <usuario>/<repositorio> --skill siu-guarani-chulupi
+npx skills add wfheredia0/skills-workbench --skill siu-guarani-chulupi
 ```
 
 Tambien puede instalarse desde una URL git o desde una ruta local si la herramienta lo soporta. El instalador se encarga de copiar o enlazar la skill en la ubicacion esperada por el agente elegido.
