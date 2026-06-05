@@ -1,4 +1,4 @@
-# My Skill
+# skills-workbench
 
 Este repositorio reune skills que he creado para usar en mis proyectos personales y en mi trabajo. Cada skill busca guardar conocimiento, criterios de implementacion, referencias y plantillas reutilizables para resolver tareas concretas de forma mas consistente.
 
