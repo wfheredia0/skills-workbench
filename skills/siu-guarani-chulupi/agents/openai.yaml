@@ -1,0 +1,4 @@
+interface:
+  display_name: "SIU Guarani Chulupi"
+  short_description: "Personalizaciones de Chulupi"
+  default_prompt: "Use $siu-guarani-chulupi para guiar una personalizacion segura de SIU-Guarani 3W."
