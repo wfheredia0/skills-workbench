@@ -45,6 +45,14 @@ Punto de partida: `assets/templates/transaccion.php`.
 
 Mantener controladores delgados: el controlador valida flujo y delega reglas en transacciones cuando corresponde.
 
+En transacciones con escritura, no ocultar errores. Ante una excepcion o resultado invalido:
+
+1. Abortar la transaccion si esta abierta.
+2. Registrar el error con el mecanismo de log del proyecto.
+3. Lanzar una excepcion de usuario o devolver un resultado/mensaje que el controlador pueda informar.
+
+Evitar patrones donde se captura la excepcion, se escribe el log y luego se continua como si la operacion hubiera sido exitosa.
+
 ## Checklist
 
 - El SQL quedo en catalogos.
@@ -53,3 +61,4 @@ Mantener controladores delgados: el controlador valida flujo y delega reglas en 
 - Se definio cache solo si es seguro.
 - Se regenero catalogo o se actualizo `_info_catalogo.php`.
 - La transaccion encapsula reglas de negocio.
+- Las transacciones de escritura abortan, registran e informan errores de forma visible.

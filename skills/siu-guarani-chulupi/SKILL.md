@@ -79,7 +79,7 @@ Proceder asi:
 Reglas por tipo:
 
 - PHP: extender la clase original y sobrescribir solo los metodos necesarios. Ajustar namespaces y aliases.
-- Mensajes: agregar o modificar solo las claves necesarias.
+- Mensajes: agregar o modificar solo las claves necesarias. No tomar la copia completa de `mensajes.es.php` como patron recomendado; usarla solo si la version instalada o el caso concreto lo exige.
 - CSS: usar reglas especificas de la operacion o pagelet.
 - JavaScript y Twig: revisar el original; suelen requerir copiar el archivo completo en la ruta espejo.
 - Imagenes: reemplazar con el mismo nombre y ruta espejo si el framework resuelve por path.
@@ -128,6 +128,7 @@ Reglas:
 - Los catalogos contienen SQL.
 - Las transacciones orquestan reglas de negocio y llamadas a catalogos.
 - Evitar SQL en controladores, vistas y Twig.
+- En transacciones con escritura, manejar errores de forma visible: abortar la transaccion, registrar el error y devolver o lanzar una excepcion/mensaje que el controlador pueda informar. No ocultar fallos solo con logs.
 - Revisar las directivas/comentarios requeridos por la version instalada.
 - Registrar funciones nuevas o modificadas en `_info_catalogo.php` o ejecutar `bin/guarani generar_catalogo`.
 - Usar cache solo si es seguro. Valores habituales: `no`, `memoria`, `sesion`.
@@ -201,6 +202,7 @@ El manual fuente de esta skill fue contrastado con documentacion oficial de SIU-
 - Namespaces, aliases y herencia fueron revisados.
 - Access/menu usa declaracion minima cuando la version lo permite.
 - Zonas, permisos y acciones de escritura fueron revisados cuando corresponde.
+- Las transacciones de escritura abortan, registran e informan errores de forma visible.
 - Catalogos fueron registrados o regenerados cuando cambio el modelo.
 - Cache fue limpiada o recomendada cuando el comportamiento queda stale.
 - El cambio fue pensado para desarrollo/pruebas y bajo versionado.

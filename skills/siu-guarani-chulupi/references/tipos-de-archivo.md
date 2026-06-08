@@ -14,6 +14,8 @@ Antes de usar el template, copiar el namespace y el nombre real de clase desde l
 
 Agregar o sobrescribir solo las claves necesarias. Evitar copiar completo `mensajes.es.php` si el proyecto permite declaracion minima.
 
+Si un ejemplo historico incluye un `mensajes.es.php` completo, no tomarlo automaticamente como patron recomendado. Preferir una personalizacion minima con las claves nuevas o modificadas, salvo que la version instalada exija otra cosa.
+
 ## CSS
 
 Agregar reglas especificas que pisen las originales sin ampliar el impacto visual. Mantener selectores acotados a la operacion, pagelet o contenedor correspondiente.
